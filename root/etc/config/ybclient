@@ -1,0 +1,6 @@
+config client "client"
+	option enable '0'
+	option username '201900000000'
+	option password '000000'
+	option type 'telecom'
+	

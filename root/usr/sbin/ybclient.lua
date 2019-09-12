@@ -22,7 +22,7 @@
 local socket = require("socket")
 local http = require("socket.http")
 local ltn12 = require("ltn12")
---local json = require("luci.jsonc")
+local json = require("luci.jsonc")
 
 local user = {}
 user.id = arg[1]
@@ -113,11 +113,11 @@ local response_body_char, response_body_obj
 if type(response_body) == "table" then
 	response_body_char = table.concat(response_body)
     print(response_body_char)
---	response_body_obj = json.parse(response_body_char)
---	if response_body_obj.userIndex then
---		print("userIndex: "..response_body_obj.userIndex)
---		os.execute("echo "..response_body_obj.userIndex.." > "..userindex_file)
---	end
+	response_body_obj = json.parse(response_body_char)
+	if response_body_obj.userIndex then
+		print("userIndex: "..response_body_obj.userIndex)
+		os.execute("echo "..response_body_obj.userIndex.." > "..userindex_file)
+	end
 else
     print("Response is not a table:", type(response_body))
 end
